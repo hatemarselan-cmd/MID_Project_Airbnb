@@ -2,9 +2,6 @@
 import streamlit as st
 import pandas as pd
 import plotly.express as px
-import folium
-from folium.plugins import MarkerCluster
-from streamlit_folium import st_folium
 
 st.set_page_config(layout= 'wide', page_title= 'Airbnb_USA_prices')
 html_title = "<h1 style=color:Black;text-align:center;> Airbnb EDA Project </h1>"
@@ -219,3 +216,4 @@ if page == 'other':
     st.plotly_chart(px.imshow(num_corr, text_auto= True, title='correlation matrix', width=1000,height=1000,color_continuous_scale='Reds'))
     
   
+
