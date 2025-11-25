@@ -2,7 +2,6 @@
 import streamlit as st
 import pandas as pd
 import plotly.express as px
-
 st.set_page_config(layout= 'wide', page_title= 'Airbnb_USA_prices')
 html_title = "<h1 style=color:Black;text-align:center;> Airbnb EDA Project </h1>"
 st.markdown(html_title, unsafe_allow_html= True)
@@ -142,12 +141,12 @@ if page == 'GEO_map':
         
 if page=="CAT_NUM_analysis":
     # Number of units per city
-    st.subheader("🏙️ Top 5 Cities with the Highest Revenue")
+    st.subheader("🏙️ Number of units per city")
     st.plotly_chart(px.histogram(data_frame=df,x='city',color='city',text_auto=True,title=' The number of units per city').update_xaxes(categoryorder = 'max descending'))
     
     #- What are the top 5 cities with the highest revenue ?
     top_5_city = df.groupby(['city'])['price_original_$'].sum().reset_index().sort_values(by= 'price_original_$', ascending= False).head(5)
-    st.subheader("🏙️ Top 5 Cities with the Highest Revenue")
+    st.subheader("🏙️ Top Cities with the Highest Revenue")
     st.plotly_chart(px.bar(data_frame= top_5_city, x= 'city', y= 'price_original_$',color='city',title= 'Top 5 city with the highest revenue', text_auto= True))
     
     
@@ -216,4 +215,3 @@ if page == 'other':
     st.plotly_chart(px.imshow(num_corr, text_auto= True, title='correlation matrix', width=1000,height=1000,color_continuous_scale='Reds'))
     
   
-
