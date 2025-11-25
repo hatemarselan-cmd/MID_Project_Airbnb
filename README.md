@@ -1,2 +1,3 @@
-# MID_Project_Airbnb
-the docs for the mid project EDA for airbnb
+# MID_Project_Airbnb 
+this the project EDA for airbnb dataset 
+https://midprojectairbnb-at2isatdtufhljjmtq9xyf.streamlit.app/     #### streamlit link
